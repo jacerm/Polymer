@@ -1,0 +1,130 @@
+﻿<link rel="import" href="../bower_components/polymer/polymer.html" />
+
+<dom-module id="hero-playlist-element">
+	<style>
+		a {
+			z-index: 1;
+			position: absolute;
+			top: 86px;
+		}
+
+		.arrowp {
+			height: 32px;
+		}
+
+		#previous1 {
+			left: 45px;
+		}
+
+		#next1 {
+			right: 45px;
+		}
+
+		#default1 {
+			height: 80px;
+			margin-top: 0;
+			margin-right: 15px;
+			margin-left: 15px;
+			margin-bottom: 15px;
+		}
+
+		#default {
+			height: 80px;
+			margin: 15px;
+			margin-bottom: 0;
+		}
+
+		#hero {
+			height: 160px;
+			margin: 15px;
+		}
+
+		table {
+			overflow: hidden;
+			background-color: yellow;
+		}
+
+		div {
+			overflow: hidden;
+		}
+
+		td {
+			vertical-align: top;
+		}
+
+		section {
+			margin-top: 15px;
+			position: relative;
+		}
+	</style>
+	<template>
+		<section>
+			<a href="#" id="previous1" on-click="handleClick1"><img src="../Content/1432242132_circle_back_arrow.png" class="arrowp" /></a>
+			<a href="#" id="next1" on-click="handleClick2"><img src="../Content/1432242118_circle_next_arrow_disclosure.png" class="arrowp"></a>
+		</section>
+		<div id="table-container1">
+			<table>
+				<tr>
+					<td rowspan="2">
+						<img src="{{hero}}" id="hero">
+					</td>
+					<template is="dom-repeat" items={{images}}>
+						<td>
+							<img src="{{item.source}}" id="default" />
+						</td>
+					</template>
+				</tr>
+				<tr>
+					<template is="dom-repeat" items={{images}}>
+						<td>
+							<img src="{{item.source}}" id="default1" />
+						</td>
+					</template>
+				</tr>
+			</table>
+		</div>
+	</template>
+</dom-module>
+
+<script>
+	Polymer({
+		is: "hero-playlist-element",
+		properties: {
+			hero: {
+				type: String,
+				value: "../Content/youtube.svg"
+			}
+		},
+		ready: function () {
+			this.images = [
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" }
+			]
+		},
+		handleClick1: function (e) {
+			e.preventDefault();
+			$("#table-container1").animate({ scrollLeft: "-=400" }, "slow");
+		},
+		handleClick2: function (e) {
+			e.preventDefault();
+			$("#table-container1").animate({ scrollLeft: "+=400" }, "slow");
+		}
+	});
+</script>

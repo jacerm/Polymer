@@ -1,0 +1,69 @@
+﻿<link rel="import" href="../bower_components/polymer/polymer.html"/>
+
+<dom-module id="ad-element">
+	<style>
+		#table-container {
+			overflow: hidden;
+			margin-top: 15px;
+			width: 100%;
+		}
+
+		img {
+			height: 80px;
+			margin: 15px;
+		}
+
+		.scroll {
+			overflow: hidden;
+			background-color: blueviolet;
+			width: 100%;
+			table-layout: fixed;
+		}
+
+		#default {
+			text-align: center;
+			width: 25%;
+		}
+
+		#ad {
+			text-align: center;
+			width: 50%;
+			background-color: white;
+		}
+	</style>
+	<template>
+		<div id="table-container">
+			<table class="scroll">
+				<tr>
+					<template is="dom-repeat" items={{images}}>
+						<td id="default">
+							<img src="{{item.source}}" />
+						</td>
+					</template>
+					<td id="ad">
+						<img src="{{ad}}" />
+					</td>
+				</tr>
+			</table>
+		</div>
+	</template>
+</dom-module>
+
+<script>
+	Polymer({
+		is: "ad-element",
+		properties: {
+			ad: {
+				type: String,
+				value: "../Content/youtube.svg"
+			}
+		},
+		ready: function () {
+			this.images = [
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" }
+			]
+		},
+
+	});
+</script>

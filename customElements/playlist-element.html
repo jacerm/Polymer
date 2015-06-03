@@ -1,0 +1,115 @@
+﻿<link rel="import" href="../bower_components/polymer/polymer.html" />
+
+<dom-module id="playlist-element">
+	<style>
+		a {
+			z-index: 1;
+			position: absolute;
+			top: 80px;
+		}
+
+		.arrowp {
+			height: 32px;
+		}
+
+		#previous {
+			left: 30px;
+		}
+
+		#next {
+			right: 30px;
+		}
+
+		div {
+			overflow: hidden;
+		}
+
+		img {
+			height: 80px;
+			margin: 15px;
+		}
+
+		.scroll {
+			overflow: hidden;
+			background-color: aqua;
+		}
+
+		#default1 {
+			margin-top: 0;
+		}
+
+		section {
+			position: relative;
+			margin-top: 15px;
+		}
+	</style>
+	<template>
+		<section>
+			<a href="#" id="previous" on-click="youshouldClick"><img src="../Content/1432242132_circle_back_arrow.png" class="arrowp" /></a>
+			<a href="#" id="next" on-click="whynotClick"><img src="../Content/1432242118_circle_next_arrow_disclosure.png" class="arrowp"></a>
+		</section>
+		<div id="table-container">
+			<table class="scroll">
+				<tr>
+					<template is="dom-repeat" items={{images}}>
+						<td>
+							<img src="{{item.source}}" />
+						</td>
+					</template>
+				</tr>
+				<tr>
+					<template is="dom-repeat" items={{images}}>
+						<td>
+							<img src="{{item.source}}" id="default1" />
+						</td>
+					</template>
+				</tr>
+			</table>
+		</div>
+	</template>
+</dom-module>
+
+<script>
+	Polymer({
+		is: "playlist-element",
+		ready: function () {
+			this.images = [
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" },
+				{ source: "../Content/reddit-alien.svg" }
+			]
+		},
+		youshouldClick: function (e) {
+			e.preventDefault();
+			$("#table-container").animate({ scrollLeft: "-=400" }, "slow");
+		},
+		whynotClick: function (e) {
+			e.preventDefault();
+			$("#table-container").animate({ scrollLeft: "+=400" }, "slow");
+		}
+	});
+</script>

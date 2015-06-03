@@ -1,0 +1,6 @@
+C:\source\Unversioned\BYUtvPolymer\bin\BYUtvPolymer.dll.config
+C:\source\Unversioned\BYUtvPolymer\bin\BYUtvPolymer.dll
+C:\source\Unversioned\BYUtvPolymer\bin\BYUtvPolymer.pdb
+C:\source\Unversioned\BYUtvPolymer\obj\Debug\BYUtvPolymer.csprojResolveAssemblyReference.cache
+C:\source\Unversioned\BYUtvPolymer\obj\Debug\BYUtvPolymer.dll
+C:\source\Unversioned\BYUtvPolymer\obj\Debug\BYUtvPolymer.pdb

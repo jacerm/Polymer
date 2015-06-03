@@ -1,0 +1,55 @@
+﻿<link rel="import" href="../bower_components/polymer/polymer.html" />
+
+<dom-module id="link-element">
+	<style>
+		nav {
+			height: 100px;
+			width: 100%;
+			background-color: ButtonShadow;
+			margin-top: 15px;
+			display: flex;
+		}
+
+		div {
+			margin: auto;
+			text-align: center;
+		}
+
+		span {
+			font-family: Arial, Helvetica, sans-serif;
+			color: ActiveCaption;
+			font-size: 14px;
+			font-weight: bold;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		span:hover {
+			color: aliceblue;
+		}
+	</style>
+	<template>
+		<nav>
+			<div>
+				<a href="http://www.byutv.org"><span>About BYUtv</span></a>  |
+				<a href="http://www.byutv.org"><span>Press Room</span></a>  |
+				<a href="http://www.byutv.org"><span>Donate</span></a>  |
+				<a href="http://www.byutv.org"><span>Newsletter</span></a>  |
+				<a href="http://www.byutv.org"><span>Help</span></a>  |
+				<a href="http://www.byutv.org"><span>Site Map</span></a>  |
+				<a href="http://www.byutv.org"><span>Privacy Policy</span></a>  |
+				<a href="http://www.byutv.org"><span>Terms of Use</span></a>
+			</div>
+		</nav>
+	</template>
+</dom-module>
+
+<script>
+
+	Polymer({
+
+		is: 'link-element'
+	});
+</script>

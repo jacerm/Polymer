@@ -1,0 +1,95 @@
+﻿<link rel="import" href="../bower_components/polymer/polymer.html" />
+
+<dom-module id="byutv-element">
+	<style>
+		nav {
+			height: 100px;
+			width: 100%;
+			background-color: black;
+			display: flex;
+		}
+
+		img {
+			height: 80px;
+			background-color: black;
+		}
+
+		a {
+			align-self: center;
+			margin-left: 15px;
+			text-decoration: none;
+		}
+
+		span {
+			font-family: Arial, Helvetica, sans-serif;
+			color: ActiveCaption;
+			font-size: 16px;
+			font-weight: bold;
+		}
+
+			span:hover {
+				color: cornflowerblue;
+			}
+
+		#magnify {
+			height: 25px;
+			align-self: center;
+			border: 2px solid ActiveCaption;
+			border-radius: 38%;
+			padding: 5px;
+		}
+
+		#space {
+			width: 637px;
+		}
+	</style>
+	<template>
+		<nav>
+			<a href="http://www.byutv.org">
+				<img src="{{byu}}" />
+			</a>
+			<a href="http://www.byutv.org">
+				<span>
+					Shows
+				</span>
+			</a>
+			<a href="http://www.byutv.org">
+				<span>
+					Watch Live
+				</span>
+			</a>
+			<a href="http://www.byutv.org">
+				<span>
+					Playlists
+				</span>
+			</a>
+			<a href="http://www.byutv.org">
+				<span>
+					Favorites
+				</span>
+			</a>
+			<a href="http://www.byutv.org">
+				<span>
+					Social Wall
+				</span>
+			</a>
+			<a href="" id="space"></a>
+			<img src="../Content/magnifying.png" id="magnify" />
+		</nav>
+	</template>
+</dom-module>
+
+<script>
+
+	Polymer({
+		is: "byutv-element",
+
+		properties: {
+			byu: {
+				type: String,
+				value: "../Content/BYUtvlogo-01.svg"
+			}
+		}
+	});
+
+</script>
